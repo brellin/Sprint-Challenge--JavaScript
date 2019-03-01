@@ -60,7 +60,11 @@ const graduates = [{ "id": 1, "first_name": "Cynde", "university": "Missouri Sou
 /* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = graduates.map(x => x.university).sort();
+// const universities = graduates.map(x => x.university).sort();
+const universities = [].sort();
+for (let i = 0; i < graduates.length; i++) {
+  universities.push(graduates[i].university);
+}
 console.log(universities)
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
@@ -69,12 +73,20 @@ The resulting contact information should have a space between the first name and
 Name email@example.com
 
 Log the result of your new array. */
-const contactInfo = graduates.map(x => `${x.first_name}, ${x.email}`);
+// const contactInfo = graduates.map(x => `${x.first_name}, ${x.email}`);
+const contactInfo = [];
+for (let i = 0; i < graduates.length; i++) {
+  contactInfo.push(`${graduates[i].first_name}, ${graduates[i].email}`);
+}
 console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = graduates.map(x => x.university).filter(x => x.includes('Uni'));
+// const uni = graduates.map(x => x.university).filter(x => x.includes('Uni'));
+const uni = [];
+for (let i = 0; i < graduates.length; i++) {
+  graduates[i].university.includes('Uni') ? uni.push(graduates[i].university) : uni.push();
+}
 console.log(uni);
 
 
@@ -125,7 +137,7 @@ console.log(largerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = zooAnimals.map(x => x.population).reduce((x, y) => x + y);
+const populationTotal = zooAnimals.reduce((acc, curr) => acc + curr.population, 0);
 console.log(populationTotal);
 
 
