@@ -1,1 +1,0 @@
-consume("Mary", "Poppins", greeting)
