@@ -1,1 +1,1 @@
-zooAnimals.map(x => x.population).reduce((x, y) => x + y)
+consume("Mary", "Poppins", greeting)
